@@ -65,7 +65,16 @@ function onInsertVideoWhenTargetIsVisible(targetElm, videoElm) {
 
 function insertVideo(targetElm, videoElm) {
     targetElm.appendChild(videoElm);
-    videoElm.play();
+    var promiseVideoPlay = videoElm.play();
+    if (promiseVideoPlay !== undefined) {
+        promiseVideoPlay.then(resolve => {
+            console.log("User interacted before playing video.");
+        }).catch(error => {
+            console.log("User didn't interact with the video, autoplaying without sound.");
+            videoElm.muted = true;
+            videoElm.play();
+        });
+    }
     videoElm.onended = function(){
         targetElm.removeChild(videoElm);
     }
