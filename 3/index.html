@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test 3 by Sergio Linares Peralta</title>
+    </head>
+
+    <style>
+        .container{
+            width: 50%;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <h1>Test 3 por Sergio Linares Peralta</h1>
+            <h2>Cuestión:</h2>
+            <p>En este caso, tenemos un código usando el objeto `Promise` (Promesa). Las *promises* 
+                (promesas) nos permiten manejar situaciones asíncronas en nuestras ejecuciones, 
+                pero tenemos un pequeño problema… No es una solución totalmente cross-browser. 
+                Sabemos que no funciona en Internet Explorer así que nos gustaría saber cómo 
+                modificarías nuestro código (`test.js`) para que funcione correctamente.</p>
+            <h2>Respuesta:</h2>
+            <p>He refactorizado el código actual en funciones para tengan funcionalidad con callbacks por defecto, y en caso de poder usarse premisas se ejecutará el código de igual manera que en el ejercicio dado. En caso de que sea Internet Explorer, ejecutaría el código tan sólo con los callbacks, que devuelven una respuesta una vez termine la ejecución de un código.</p>
+        </div>
+        <script type="text/javascript" src="my-script.js"></script>
+        <script type="text/javascript">
+            // En caso de que no sea IE cargamos el script que contiene las promises, sino, directamente llamamos a la función que realiza los callbacks
+            var isAtLeastIE11 = !!(navigator.userAgent.match(/Trident/) && !navigator.userAgent.match(/MSIE/));
+            if (!isAtLeastIE11){
+                document.write("\<script type='text/javascript' src='test.js'\>\</script\>");
+            }
+            else{
+                random(resolveMessage, rejectMessage);
+            }
+        </script>
+    </body>
+</html>

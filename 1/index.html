@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test 1 by Sergio Linares Peralta</title>
+    </head>
+
+    <style>
+        .container{
+            width: 50%;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <h1>Test 1 por Sergio Linares Peralta</h1>
+            <h2>Preguntas:</h2>
+            <ol>
+                <li><p>En el fragmento de código de nuestro archivo (`test.js`) podemos encontrar hasta 3 variables. ¿Podrías decirnos cuál sería el valor de todas ellas al finalizar la ejecución del script?</p></li>
+                <li><p>Modifica el código para que las variables `rgb` y `wb` mantengan sus valores iniciales y `colors` tenga los valores de ambas al finalizar la ejecución del script.</p></li>
+                <li><p>Además, tenemos un bug localizado en dispositivos con Internet Explorer… El código de nuestro script no funciona y necesitamos que se ejecute también en este navegador. ¿Sabrías identificar cuál es el problema? ¿Qué solución nos propones?</p></li>
+            </ol>
+            <h2>Respuestas:</h2>
+            <ol>
+                <li>
+                    <p id="rgbtext"></p>
+                    <p id="wbtext"></p>
+                    <p id="colorstext"></p>
+                </li>
+                <li>
+                    <p>Cambiamos el código añadiéndole "{}", para así no sobreescribir los valores del objeto "rgb": <br><code>var colors = Object.assign({}, rgb, wb);</code></p>
+                    <input type="button" onclick="clickColorsChange()" value="¡Pruébame!">
+                </li>
+                <li>
+                    <p>He añadido una función, la cual recomiendan desde la página oficial de Mozilla, que reemplaza el funcionamiento de <code>Object.assign</code> para el caso de Internet Explorer.</p>
+                </li>
+            </ol>
+        </div>
+        <script type="text/javascript" src="test.js"></script>
+        <script type="text/javascript" src="my-script.js"></script>
+    </body>
+</html>

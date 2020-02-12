@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Test 2 by Sergio Linares Peralta</title>
+    </head>
+
+    <style>
+        .container{
+            width: 50%;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <h1>Test 2 por Sergio Linares Peralta</h1>
+            <h2>Preguntas:</h2>
+            <ol>
+                <li><p>Sin necesidad de ejecutar el código, ¿sabrías decirnos qué valor imprimiría por consola el script? ¿Cuál es el motivo?</p></li>
+                <li>
+                    <p>Sabiendo que el output que buscamos es el que encuentras bajo estas líneas… ¿Cómo solucionarías el fragmento de código para que el output sea el deseado?</p>
+                    <ul>
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </li>
+            </ol>
+            <h2>Respuestas:</h2>
+            <ol>
+                <li>
+                    <p>El loop de javascript se ejecuta casi de inmediato, por lo tanto si hay una función como "setTimeout" lo que pasará es que el bucle terminará antes de la ejecución de código dentro del "setTimeout", y dará como resultado en consola el último valor (repetido varias veces) registrado dentro del bucle.</p>
+                </li>
+                <li>
+                    <p>He creado una función "counter" que se encarga de llamarse a sí misma recursivamente una vez termine el tiempo del "setTimeout", parametrizado de manera que pueda personalizarse de forma sencilla. Por defecto he dejado el ejemplo ejecutarse con una visualización por consola, añadiendo una opción para poder implementar funciones de vistas personalizadas, como la programada a través del siguiente botón:</p>
+                    <input type="button" onclick="clickViewCount()" value="¡Cuéntame!"><br><br>
+                    <ul id="counter">
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <script type="text/javascript" src="test.js"></script>
+        <script type="text/javascript" src="my-script.js"></script>
+    </body>
+</html>
