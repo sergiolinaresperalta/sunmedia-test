@@ -1,4 +1,5 @@
 import Event from './Event';
+import PolyfillIncludes from './PolyfillIncludes.js';
 
 export default class EventManager{
     constructor(events, types){
@@ -7,6 +8,7 @@ export default class EventManager{
     }
 
     run() {
+        let poly = new PolyfillIncludes();
         const send = this.send;
         const types = this.types;
 
